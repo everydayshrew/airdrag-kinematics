@@ -11,9 +11,10 @@ int main()
     double time = 0;
     double maxheight = 0;
     double distance = 0;
-    ofstream output;
-    output.open("data.txt");
-    output << "0 0\n";
+	// Excess graphing output file
+    //ofstream output;
+    //output.open("data.txt");
+    //output << "0 0\n";
     
     int tv1, tv5;
     double tv2, tv3, tv4;
@@ -44,13 +45,8 @@ int main()
        object_1.setAcceleration(world_1);
        if(maxheight < object_1.YPos()){maxheight = object_1.YPos();}
        object_1.setVelocity(object_1.XAcc(), object_1.YAcc());
-       //DEBUG
-       //cout << "X Pos: " << object_1.XPos() << "  Y Pos: " << object_1.YPos();
-       //cout << "\nX Vel: " << object_1.XVel() << "  Y Vel: " << object_1.YVel();
-       //cout << "\nX Acc: " << object_1.XAcc() << "  Y Acc: " << object_1.YAcc();
-       //cout << "\n\n\n";
-       //output.precision(2);
-       output << object_1.XPos() << " " << object_1.YPos() << "\n";
+       // for graphical simulation
+       //output << object_1.XPos() << " " << object_1.YPos() << "\n";
        time++;
     }
     
@@ -58,8 +54,7 @@ int main()
     cout << "\nTime traveled: " << time/100;
     cout << "\nDistance: " << object_1.XPos();
     cout << "\n\n";
-    //output << "}";
-    output.close();
+    //output.close();
     system("PAUSE");
     return 0;
 }
